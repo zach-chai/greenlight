@@ -14,12 +14,10 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
-class RecordingReadyEmailJob < ApplicationJob
-  queue_as :default
+require 'test_helper'
 
-  def perform(user, rec)
-    if user.email.present? && user.unsubscribed.blank?
-      NotificationMailer.recording_ready_email(user, rec).deliver
-    end
-  end
+class UserControllerTest < ActionDispatch::IntegrationTest
+  # test "the truth" do
+  #   assert true
+  # end
 end

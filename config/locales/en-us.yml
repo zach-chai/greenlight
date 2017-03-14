@@ -71,6 +71,7 @@ en-US:
   end: End
   enter_name: Enter your name
   enter_meeting_name: Enter a meeting name to start
+  error: Sorry an error occured
   footer_html: Powered by %{bbb_link}
   help: Help
   hi_all: Hi Everyone
@@ -126,11 +127,14 @@ en-US:
   presentation: Presentation
   previous_meetings: (previous meetings)
   return_to_room: Return to main page
+  return_to_home: Return to home page
   session_url_explanation: The meeting will be taking place using the following URL
   signin_text: Log in with %{provider}
   start: Start
   start_join: Start
   start_meeting: Start meeting
+  successful_resubscribe: You have successfully resubscribed
+  successful_unsubscribe: You have successfully unsubscribed
   thumbnails: Thumbnails
   url_copy_explanation: Copy this URL to invite others to the meeting
   user_person_room: "%{name} personal room"

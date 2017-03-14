@@ -14,12 +14,23 @@
 # You should have received a copy of the GNU Lesser General Public License along
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 
-class RecordingReadyEmailJob < ApplicationJob
-  queue_as :default
+class UserController < ApplicationController
 
-  def perform(user, rec)
-    if user.email.present? && user.unsubscribed.blank?
-      NotificationMailer.recording_ready_email(user, rec).deliver
+  def unsubscribe_mailer
+    if current_user.unsubscribed || current_user.update(unsubscribed: Time.now)
+      @msg = t('successful_unsubscribe')
+      render 'mailer_subscription'
+    else
+      render 'errors/error'
+    end
+  end
+
+  def resubscribe_mailer
+    if !current_user.unsubscribed || current_user.update(unsubscribed: nil)
+      @msg = t('successful_resubscribe')
+      render 'mailer_subscription'
+    else
+      render 'errors/error'
     end
   end
 end

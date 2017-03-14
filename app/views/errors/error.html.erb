@@ -13,5 +13,7 @@
 # with BigBlueButton; if not, see <http://www.gnu.org/licenses/>.
 %>
 
-<h1>Errors#error</h1>
-<p>Find me in app/views/errors/error.html.erb</p>
+<div class="text-center">
+  <h2><%= t('error') %></h2>
+  <%= link_to t('return_to_home'), root_path %>
+</div>
