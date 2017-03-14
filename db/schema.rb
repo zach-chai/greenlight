@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161208185458) do
+ActiveRecord::Schema.define(version: 20170314220447) do
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",     null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161208185458) do
     t.string   "username"
     t.string   "encrypted_id", null: false
     t.string   "email"
+    t.datetime "unsubscribed"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["encrypted_id"], name: "index_users_on_encrypted_id", unique: true
     t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
